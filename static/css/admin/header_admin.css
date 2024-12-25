@@ -1,0 +1,78 @@
+
+
+/*AREA DEL REGISTRO*/
+
+.header__login_area{    
+    width: 100%;
+    color:#eee;
+    display: flex;
+    justify-content:space-between;
+}
+
+.header__login_area_logo{     
+    display: table;
+}
+
+
+.header__login_area_lista{
+    display: flex;   
+}
+
+.header__login_area_lista-item{
+    list-style: none;
+    padding-right: 1rem;
+}
+
+.header__login_area_lista-item_link{
+    color:inherit;    
+}
+
+.header__login_area_lista-item_link:hover{
+    color:#ede616;
+}
+
+/*AREA DEL MENU DE NAVEGACION*/
+
+.header {
+    background: #555;
+    width: 100%;
+      
+  }
+
+.header__content {    
+    width: 100%;
+    height:40px;    
+  }
+
+.header__content_nav{
+    display: flex;
+    justify-content:center;
+    padding-top:.5rem;
+}
+
+.header__content_nav_item{
+    list-style: none;
+    padding-right: 2rem;    
+}
+
+.header__content_nav_item a{
+    text-decoration: none;
+    color:#fff;
+    padding:.5em 1.5rem;
+    font-weight: bold;
+    
+}
+
+.header__content_nav_item a:hover{    
+    color:#222;
+    background: #FFD900;
+    padding:.5em 1.5rem;
+    font-weight: bold;
+}
+
+.activar{
+    color:#222 !important;
+    background: #FFD900;
+    padding:.5em 1.5rem;
+    font-weight: bold;
+}

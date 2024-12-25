@@ -1,0 +1,57 @@
+
+    {% include 'header.html' %}
+
+    <div class="main__hero">
+        <div class="main__hero_content l-container">
+            <img src="/static/img/logo.svg" alt="logo main" class="main__hero_content_img">
+           <h1 class="main__hero_content_title">
+            😮Sitio donde puedes <span>recomendar</span> tus
+            <br>
+            Series y Peliculas Al Mundo.
+           </h1>
+        </div>
+    </div>
+
+    <div class="list_movies l-container">
+        <h2 class="list_movies__title">
+            peliculas en cine recomendaciones           
+        </h2>
+
+        {% for pelicula in peliculas.recientes %} 
+            
+        <div class="list_movies__card">
+            <img src="{{pelicula[6]}}" alt="mufasa" class="list_movies__card_img">
+            <p class="list_movie__card_name"><a href="/pelicula_detalle?id={{pelicula[0]}}">{{ pelicula[1] }}</a></p>
+            <hr>
+            <div class="list_movie__card_reviews">
+                <img src="/static/img/estrella amarilla.svg" alt="estrella" class="list_movie__card_reviews_img">
+                <p class="list_movie__card_reviews_qualification">{{pelicula[4] }}/{{pelicula[3] }}</p>
+            </div>
+        </div>
+        {% endfor %}
+
+    <div class="category_movies_top l-container">
+        <h2 class="category_movies_top_title">
+            mas recomendadas
+        </h2>
+
+        {% for pelicula in peliculas.recomendadas %} 
+            
+        <div class="list_movies__card">
+            <img src="{{pelicula[6]}}" alt="mufasa" class="list_movies__card_img">
+            <p class="list_movie__card_name"><a href="/pelicula_detalle?id={{pelicula[0]}}">{{ pelicula[1] }}</a></p>
+            <hr>
+            <div class="list_movie__card_reviews">
+                <img src="/static/img/estrella amarilla.svg" alt="estrella" class="list_movie__card_reviews_img">
+                <p class="list_movie__card_reviews_qualification">{{pelicula[4] }}/{{pelicula[3] }}</p>
+            </div>
+        </div>
+        {% endfor %}        
+
+    </div>
+
+    <input id="email" name="email" type="hidden" value="{{peliculas.usuario_logueado.email}}">
+    <input id="contrasena" name="contrasena" type="hidden" value="{{peliculas.usuario_logueado.contrasena}}">
+    <script src="/static/js/sessiones.js"></script>
+    
+    {% include 'footer.html' %}

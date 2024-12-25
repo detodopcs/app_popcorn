@@ -1,0 +1,41 @@
+
+    {% include 'header.html' %}
+
+    <div class="dashboard l-container">
+       <h1 class="dashboard_title">Dashboard v1.0</h1>
+
+       <div class="dashboard_content">
+        <form method="post" action="/dashboard">
+            <label for="titulo">Nombre de la Pelicula:</label>
+            <input type="text" id="titulo" name="titulo" required><br>
+    
+            <label for="descripcion">Descripcion de la Pelicula:</label>
+            <input type="text" id="descripcion" name="descripcion" required><br>  
+
+            <label for="fecha">Fecha de la Publicación:</label>
+            <input type="text" id="fecha" name="fecha" required><br>
+
+            <label for="calificacion">Calificacion:</label>
+            <input type="text" id="calificacion" name="calificacion" required><br>
+
+            <label for="url_fondo">Url de Fondo de la pelicula:</label>
+            <input type="text" id="url_fondo" name="url_fondo" required><br>
+
+            <label for="url_portada">Url portada de la pelicula:</label>
+            <input type="text" id="url_portada" name="url_portada" required><br>
+
+            <label for="url_video">Url Video de la pelicula:</label>
+            <input type="text" id="url_video" name="url_video" required><br>
+
+            <label for="tipo">Pelicula ('p'),Serie ('s'):</label>
+            <input type="text" id="tipo" name="tipo" required><br>                 
+    
+            <button type="submit">Publicar</button>
+        </form>
+       </div>
+
+    </div>   
+    <input id="email" name="email" type="hidden" value="{{data.usuario_logueado.email}}">
+    <input id="contrasena" name="contrasena" type="hidden" value="{{data.usuario_logueado.contrasena}}">
+    <script src="/static/js/sessiones.js"></script>    
+    {% include 'footer.html' %}

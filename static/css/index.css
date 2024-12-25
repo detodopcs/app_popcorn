@@ -1,0 +1,353 @@
+
+
+.main__hero{    
+    width: 100%; 
+    margin-top:1rem;
+    color:#eee;  
+}
+
+.main__hero_content{
+    background: url("/static/img/hero-background.jpg");
+    width: 100%;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.main__hero_content::after{
+    content: "";
+    background: #222;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    opacity: .7;
+}
+
+.main__hero_content_img{
+    z-index: 1;
+}
+
+.main__hero_content_title{
+    color:inherit;
+    font-size: 2rem;    
+    text-align: center;
+    z-index: 1;
+    span{
+        color:#FFD900;
+    }
+}
+
+/*AREA DEL CONTENEDOR DE LAS PELICULAS DEL CINE*/
+.list_movies{    
+    width: 100%;
+    color:#222;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+}
+
+/*CELULAR 720 */
+@media (max-width: 720px) {
+    .list_movies{
+        justify-content:space-around;
+    }
+  }
+
+/*CELULAR 480 */
+@media (max-width: 480px) {
+    .list_movies{
+        flex-direction: column;
+        align-items: center;
+    }
+  }
+
+
+
+.list_movies__title{
+    text-transform: uppercase;
+    color:inherit;
+    font-size: 1.5rem;
+    width: 100%;
+    padding-left: 1rem;
+}
+
+/*CELULAR 480 */
+@media (max-width: 480px) {
+    .list_movies__title{
+        text-align: center;
+    }
+  }
+
+
+.list_movies__card{
+    background-color: #658292;
+    width: 24%; 
+    border-radius: 2rem; 
+    margin-bottom: 1rem;   
+}
+
+/*CELULAR 720 */
+@media (max-width: 720px) {
+    .list_movies__card{
+        width: 30%;
+    }
+  }
+
+
+
+/*CELULAR 500 */
+@media (max-width: 500px) {
+    .list_movies__card{
+        width: 32%; 
+    }
+  }
+
+/*CELULAR 480 */
+@media (max-width: 480px) {
+    .list_movies__card{
+        width: 90%; 
+    }
+  }
+
+.list_movies__card:hover{
+    background-color: #FFD900;
+    transition: all ease-in .2s;
+    .list_movie__card_name{
+        transform: scale(1.1);
+        transition: all linear .2s;
+        color:#40ABDA;
+    }
+}
+
+.list_movies__card_img{
+    display: table;
+}
+
+.list_movie__card_name{
+    color:inherit;
+    font-weight: bold;
+    font-size:1rem;
+    text-transform: uppercase;
+    padding-left: .5rem;
+    text-align: center;
+}
+
+.list_movie__card_name a{
+    text-decoration: none;
+    color:inherit;
+}
+
+.list_movie__card_name a:hover{ 
+    transition: all linear .2s;   
+    color:#40ABDA;
+}
+
+
+
+.list_movie__card_reviews{    
+    width: 100%;
+    display:flex;      
+}
+
+.list_movie__card_reviews_img{
+    display: table;
+    padding-left: .5rem;
+}
+
+.list_movie__card_reviews_qualification{
+    font-weight: bold;
+    padding-left: .5rem;    
+}
+
+/*CATEGORIAS*/
+
+.category_movies_lista{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom:1rem;
+}
+
+/*CELULAR 480 */
+@media (max-width: 1024px) {
+    .category_movies_lista{
+        display: none;
+       
+    }
+  }
+
+
+.category_movies_lista__item{
+    list-style: none;
+    
+}
+
+.category_movies_lista__item a{
+    background: #A8B1B5;
+    padding:1rem 1.5rem;
+    border-radius: 2rem;
+    text-decoration: none;
+}
+
+.category_movies_lista__item a:hover{
+    background: #40ABDA;
+    color:#eee;  
+    transition: all linear .2s; 
+}
+
+.activate{
+    background: #40ABDA !important;
+    color:#eee;  
+}
+
+/*TOP DE LAS 10 RECOMENDADAS*/
+.category_movies_top{    
+    width: 100%;
+    color:#222;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/*CELULAR 720 */
+@media (max-width: 720px) {
+    .category_movies_top{
+        justify-content:space-around;
+    }
+  }
+
+/*CELULAR 480 */
+@media (max-width: 480px) {
+    .category_movies_top{
+        flex-direction: column;
+        align-items: center;
+    }
+  }
+
+.category_movies_top_title{
+    text-transform: uppercase;
+    color:inherit;
+    width: 100%;
+}
+
+.category_movies_top__card{
+    background-color: #658292;
+    width: 24%; 
+    border-radius: 2rem; 
+    margin-bottom: 1rem;   
+}
+
+/*CELULAR 720 */
+@media (max-width: 720px) {
+    .category_movies_top__card{
+        width: 30%;
+    }
+  }
+
+
+
+/*CELULAR 500 */
+@media (max-width: 500px) {
+    .category_movies_top__card{
+        width: 32%; 
+    }
+  }
+
+/*CELULAR 480 */
+@media (max-width: 480px) {
+    .category_movies_top__card{
+        width: 90%; 
+    }
+  }
+
+.category_movies_top__card:hover{
+    background-color: #FFD900;
+    transition: all ease-in .2s;
+    .category_movies_top__card_name{
+        transform: scale(1.1);
+        transition: all linear .2s;
+        color:#40ABDA;
+    }
+}
+
+.category_movies_top__card_img{
+    display: table;
+}
+
+.category_movies_top__card_name{
+    color:inherit;
+    font-weight: bold;
+    font-size:1rem;
+    text-transform: uppercase;
+    padding-left: .5rem;
+    text-align: center;
+}
+
+.category_movies_top__card_name a{
+    text-decoration: none;
+    color:inherit;
+}
+
+.category_movies_top__card_name a:hover{ 
+    transition: all linear .2s;   
+    color:#40ABDA;
+}
+
+.category_movies_top__card_reviews{    
+    width: 100%;
+    display:flex;      
+}
+
+.category_movies_top__card_reviews_img{
+    display: table;
+    padding-left: .5rem;
+}
+
+.category_movies_top__card_reviews_qualification{
+    font-weight: bold;
+    padding-left: .5rem;    
+}
+
+/*PAGINACION */
+.pagination{    
+    width: 100%;
+}
+
+.pagination_content{
+    background: #DFDADA;
+    width: 100%;
+    padding: 1rem 0;
+    border-radius: 10px;
+}
+
+.pagination_content_list{
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.pagination_content_list_item{
+    list-style: none;
+    padding:0 1rem;
+}
+
+.pagination_content_list_item a{
+    background: #658292;   
+    padding:1rem;
+    text-decoration: none;
+    color:#eee;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.pagination_content_list_item a:hover{
+    background: #40ABDA;
+    transition: all linear .2s;
+}
+

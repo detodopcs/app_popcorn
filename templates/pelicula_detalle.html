@@ -1,0 +1,127 @@
+
+{% include 'header.html' %}
+
+<input id="url_bg" type="hidden" value="{{datos.pelicula[5]}}">
+<div class="main__hero_template">
+    <input id="pelicula_video" type="hidden" value="{{datos.pelicula[7]}}">
+    <div class="main__hero_template_content l-container">        
+       <h1 class="main__hero_template_content_title">
+        {{datos.pelicula[1]}}       
+       </h1>
+       <p class="main__hero_template_content_description">
+        {{datos.pelicula[2]}}  
+       </p>
+
+       <p class="main__hero_template_content_button">
+        Trailer
+       </p>
+    </div>    
+</div>
+<div class="video l-container">
+    <p class="video_close">X</p>
+    <div class="video-container">
+
+    </div>
+</div>
+
+<div class="details_content l-container">
+   <img src="{{datos.pelicula[6]}}  " alt="img" class="details_content_img">
+   <div class="details_content__box">
+        <div class="details_content__box_reviews">            
+            <div class="details_content__box_reviews_positive">
+                <img src="/static/img/estrella amarilla.svg" alt="estrella" class="details_content__box_reviews_positive_stars"/>
+                <p class="details_content__box_reviews_positive_range">
+                    {{datos.pelicula[4]}}  
+                </p>
+                <p class="details_content__box_reviews_positive_comments">
+                    Medidor de recomendaciones <span>positivas</span>
+                </p>
+            </div>
+
+            <div class="details_content__box_reviews_negative">
+                <img src="/static/img/tomate.svg" alt="tomate" class="details_content__box_reviews_negative_tomato"/>
+                <p class="details_content__box_reviews_negative_range">
+                    {{datos.pelicula[4]}}  
+                </p>
+                <p class="details_content__box_reviews_negative_comments">
+                    Medidor de recomendaciones <span>negativas</span>
+                </p>
+            </div>
+            
+        </div>
+        <p class="details_content__box_text">
+            {{datos.pelicula[2]}}  
+        </p>
+   </div>
+</div>
+
+<!-- CONTENEDOR COMENTARIOS -->
+ <div class="comments_content l-container">
+    <h2 class="comments_content_title">
+        recomendacion y tomates
+    </h2>
+    <hr>
+    <div class="comments_content__items">
+
+        {% for comentario in datos.comentarios %} 
+        <div class="comments_content__items_box">
+           <div class="comments_content__items_box_avatar">
+            <img src="https://w7.pngwing.com/pngs/825/857/png-transparent-computer-icons-user-profile-user-silhouette-apple-icon-image-format-user-profile-thumbnail.png" width="40" height="40" alt="profile" class="comments_content__items_box_avatar_img">
+            <p class="comments_content__items_box_name">{{comentario[5]}}</p>
+           </div>
+           <p class="comments_content__items_box_comment">{{comentario[3]}}</p>
+           <div class="comments_content__items_box_bottom">                
+                <p class="comments_content__items_box_bottom_date">
+                    <span>{{comentario[4]}}</span>
+                </p>
+           </div>
+        </div>
+
+        {% endfor %}  
+        
+    </div>
+ </div>
+<!-- AREA NUEVO COMENTARIO -->
+<div class="area_comments l-container">
+    <form method="POST" action="/registrar_comentario" >
+        <div class="area_comments_content">
+            <h2 class="area_comments_content_title">
+                ¿Qué te Pareció?
+            </h2>
+            <p class="area_comments_content_text">
+                Escribe una opinión
+            </p>
+            <div class="area_comments_conten_box">
+                
+            </div>
+            
+            <textarea name="comentario" id="comentario" rows="4" ></textarea>
+            <input id="pelicula_id"  name="pelicula_id" type="hidden" value="{{datos.pelicula[0]}}">
+            <input id="usuario_id"  name="usuario_id" type="hidden" value="{{datos.usuario_logueado.id}}">
+        </div>
+        <button type="submit">Enviar Comentario</button> 
+
+    </form>
+    
+</div>
+
+<input id="email" name="email" type="hidden" value="{{datos.usuario_logueado.email}}">
+<input id="contrasena" name="contrasena" type="hidden" value="{{datos.usuario_logueado.contrasena}}">
+<script src="/static/js/sessiones.js"></script>
+<script src="/static/js/sessiones_pelicula_detalle.js"></script>
+<script src="/static/js/movie_template.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% include 'footer.html' %}

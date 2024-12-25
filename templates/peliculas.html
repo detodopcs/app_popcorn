@@ -1,0 +1,48 @@
+
+     
+    {% include 'header.html' %}  
+    
+    <div class="list_movies l-container">
+        <h2 class="list_movies__title">
+            Todas las peliculas           
+        </h2>
+
+        {% for pelicula in data.peliculas %} 
+            
+            <div class="list_movies__card">
+                <img src="{{pelicula[6]}}" alt="mufasa" class="list_movies__card_img">
+                <p class="list_movie__card_name"><a href="/pelicula_detalle?id={{pelicula[0]}}">{{ pelicula[1] }}</a></p>
+                <hr>
+                <div class="list_movie__card_reviews">
+                    <img src="/static/img/estrella amarilla.svg" alt="estrella" class="list_movie__card_reviews_img">
+                    <p class="list_movie__card_reviews_qualification">{{pelicula[4] }}/{{pelicula[3] }}</p>
+                </div>
+            </div>
+        {% endfor %}      
+
+         <!-- PAGINACION -->
+          <div class="pagination">
+                <div class="pagination_content">
+                   <ul class="pagination_content_list">
+                        <li class="pagination_content_list_item">
+                            <a href="#">1</a>
+                        </li>
+                        <li class="pagination_content_list_item">
+                            <a href="#">2</a>
+                        </li>
+                        <li class="pagination_content_list_item">
+                            <a href="#">3</a>
+                        </li>
+                        <li class="pagination_content_list_item">
+                            <a href="#">Ultima pagina</a>
+                        </li>
+                   </ul>
+                </div>
+          </div>  
+
+    </div>   
+    <input id="email" name="email" type="hidden" value="{{data.usuario_logueado.email}}">
+    <input id="contrasena" name="contrasena" type="hidden" value="{{data.usuario_logueado.contrasena}}">
+    <script src="/static/js/sessiones.js"></script>
+    
+    {% include 'footer.html' %}

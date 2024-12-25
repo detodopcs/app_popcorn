@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mi primera pagina en flask</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+   <div class="header">
+    <div class="header__login_area l-container">
+        <img src="/static/img/logo.svg" alt="logo" class="header__login_area_logo">
+        <ul class="header__login_area_lista">
+            <li class="header__login_area_lista-item" id="iniciar_session"><a href="/login" class="header__login_area_lista-item_link">
+                Iniciar Sesión
+            </a></li>
+            <li class="header__login_area_lista-item" id="cerrar_session"><a href="/logout" class="header__login_area_lista-item_link">
+                Cerrar Sesión
+            </a></li>
+            <li class="header__login_area_lista-item" id="registrarse"><a href="/registro" class="header__login_area_lista-item_link">
+                Registrarte
+            </a></li>            
+        </ul>        
+    </div>
+    <div class="header__content l-container">
+        
+        <nav class="header__content_nav">
+            <li class="header__content_nav_item" id="menu_dashboard"><a href="/dashboard" >Dashboard</a></li>
+            <li class="header__content_nav_item"><a href="/home" >Inicio</a></li>
+            <li class="header__content_nav_item"><a href="/peliculas">Peliculas</a></li>
+            <li class="header__content_nav_item"><a href="/series">Series</a></li>
+        </nav>
+    </div>
+   </div>

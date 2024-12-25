@@ -1,0 +1,35 @@
+{% include 'header.html' %}
+
+<div class="register l-container">
+   <div class="register_content">
+    <h1 class="register_content_title">
+        registro de usuario
+    </h1>
+
+    <form method="post" action="/registro">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br>
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required><br>       
+
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" required><br>
+
+        <label for="confirmar_contrasena">Confirmar contraseña:</label>
+        <input type="password" id="confirmar_contrasena" name="confirmar_contrasena" required><br>
+        
+        <label>Tipo de usuario:</label>
+        <label class="opciones_multiples">
+            <input type="radio" name="tipo_usuario" value="m"> moderador
+            <input type="radio" name="tipo_usuario" value="e"> estandar
+        </label>           
+
+        <button type="submit">Registrarse</button>
+    </form>
+   </div>
+</div>
+<input id="email" name="email" type="hidden" value="{{data.usuario_logueado.email}}">
+<input id="contrasena" name="contrasena" type="hidden" value="{{data.usuario_logueado.contrasena}}">
+<script src="/static/js/sessiones.js"></script>
+{% include 'footer.html' %}

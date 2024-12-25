@@ -1,0 +1,8 @@
+{% include 'header.html' %}
+
+    <h1>Acceso Denegado</h1>
+
+    <input id="email" name="email" type="hidden" value="{{data.usuario_logueado.email}}">
+    <input id="contrasena" name="contrasena" type="hidden" value="{{data.usuario_logueado.contrasena}}">
+    <script src="/static/js/sessiones.js"></script>
+{% include 'footer.html' %}
