@@ -1,12 +1,13 @@
 
 {% include 'header.html' %}
 
-<input id="url_bg" type="hidden" value="{{datos.pelicula[5]}}">
-<div class="main__hero_template">
+    <input id="url_bg" type="hidden" value="{{datos.pelicula[5]}}">
+    <div class="main__hero_template">
     <input id="pelicula_video" type="hidden" value="{{datos.pelicula[7]}}">
+   
     <div class="main__hero_template_content l-container">        
        <h1 class="main__hero_template_content_title">
-        {{datos.pelicula[1]}}       
+            <span> {{datos.pelicula[1]}}</span>       
        </h1>
        <p class="main__hero_template_content_description">
         {{datos.pelicula[2]}}  
@@ -91,18 +92,20 @@
             <p class="area_comments_content_text">
                 Escribe una opinión
             </p>
-            <div class="area_comments_conten_box">
-                
+            <div class="area_comments_conten_box">                
             </div>
             
-            <textarea name="comentario" id="comentario" rows="4" ></textarea>
+            <textarea name="comentario" id="comentario" rows="4"></textarea>
             <input id="pelicula_id"  name="pelicula_id" type="hidden" value="{{datos.pelicula[0]}}">
             <input id="usuario_id"  name="usuario_id" type="hidden" value="{{datos.usuario_logueado.id}}">
         </div>
-        <button type="submit">Enviar Comentario</button> 
-
-    </form>
-    
+        <div class="contador_caracteres">
+            <p class="contador">0</p>
+            <p>Max(253)</p>
+        </div>
+       
+        <button type="submit" class="form_button">Enviar Comentario</button> 
+    </form>    
 </div>
 
 <input id="email" name="email" type="hidden" value="{{datos.usuario_logueado.email}}">

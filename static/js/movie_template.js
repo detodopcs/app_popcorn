@@ -39,8 +39,7 @@ function agregarIframe(source) {
         videoShow.style.display ="none";
         removerIframe();
       }
-      function cambiar_fondo(){
-        console.log(changeBG);
+      function cambiar_fondo(){        
         fondoAnterior.style.backgroundImage = 'url("'+changeBG+'")';
         
       }

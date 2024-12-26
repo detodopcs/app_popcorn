@@ -9,9 +9,16 @@
 
 .main__hero_template_content{
     background: url("/static/img/bg_rey-leon.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     width: 100%;
     height: 450px;    
     position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
    
 }
 
@@ -31,10 +38,10 @@
     color:inherit;
     font-size: 2rem;  
     z-index: 1;
-    position: absolute;
-    bottom: 10rem;
-    left:1rem;
-    
+    position: relative;
+    padding: 0 1rem;
+    width: 100%;
+    margin: 0;
     span{
         color:#FFD900;
     }
@@ -44,45 +51,47 @@
     color:inherit;
     font-size: 1rem;
     z-index: 1;
-    position: absolute;
-    bottom: 8rem;
-    left:1rem;
+    position: relative;   
+    padding: 0 1rem;
+    width: 100%;
 }
 
 .main__hero_template_content_button{
     background: #26A5F4;
     padding: 1rem 2rem;
+    margin: 0 1rem;
     color:inherit;
     font-size: 1rem;
     z-index: 1;
-    position: absolute;
-    bottom: 2rem;
-    left:1rem;
+    position: relative;   
     border-radius: 1rem; 
     text-transform: uppercase;
     display: flex;  
-    justify-content:flex-end;
+    justify-content:center;
     align-items: center;
+    width: 200px;
     cursor: pointer; 
-  
-    
+}
+
+.main__hero_template_content_button:hover{
+    background:#FFD900;
+    transition: all linear .2s;
+    color:#222;    
 }
 
 .main__hero_template_content_button::before{
     content: url("/static/img/play.svg");
     width: 20px;
-    position: absolute;
-    left:0;         
+    position: relative;
+    margin-right: 1rem;            
 }
 
 /*DETALLES*/
-.details_content{
-    
+.details_content{    
     width: 100%;
     display: flex;
     justify-content: space-between;    
 }
-
 
 /*CELULAR 480 */
 @media (max-width: 480px) {
@@ -210,7 +219,6 @@
     color:inherit;
 }
 
-
 /*CELULAR 480 */
 @media (max-width: 480px) {
     .comments_content_title{
@@ -244,9 +252,6 @@
     cursor: pointer;
 }
 
-
-
-
 /*CELULAR 720 */
 @media (min-width: 720px) {
     .video{
@@ -260,8 +265,6 @@
        width: 50%;
     }
   }
-
-
 
 .video-container {
     position: relative;
@@ -277,7 +280,6 @@
     width: 100%;
     height: 100%;
   }
-
 
 /*CONTENEDOR DE LOS COMENTARIOS*/
 .comments_content__items{
@@ -298,7 +300,6 @@
     }
   }
 
-
 .comments_content__items_box{
     background: #eee;
     width: 30%;
@@ -307,7 +308,6 @@
     margin-bottom: .5rem;
 }
 
-
 /*CELULAR 760px */
 @media (max-width: 760px) {
     .comments_content__items_box{
@@ -315,14 +315,12 @@
     }
   }
 
-
 /*CELULAR 480 */
 @media (max-width: 480px) {
     .comments_content__items_box{
         width: 90%;
     }
   }
-
 
 .comments_content__items_box_avatar{
    /* background: #26A5F4;*/
@@ -436,4 +434,14 @@
   width: 100%;
   font-size: 1.5rem;
   color:#222;
+}
+
+.contador_caracteres{
+    padding-top:.2rem;
+    display: flex;
+    justify-content: space-between;  
+}
+
+.contador_caracteres p{
+    margin: 0;
 }
